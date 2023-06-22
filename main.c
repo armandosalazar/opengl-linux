@@ -15,7 +15,8 @@ int main(void) {
 	if (window == NULL)
 		printf("%s\n",  "null");
 
-	printf("%d\n", window == NULL);
+	printf("%d\n", sizeof(window));
+	printf("%d\n", sizeof(w));
 
 	return 0;
 }
