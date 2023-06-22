@@ -1,6 +1,17 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include "keys.h"
+#include <arpa/inet.h>
+
+#define PORT 8080
+#define BUFFER_SIZE 1024
+
+typedef struct sockaddr_in sockaddr_in;
+
+void run_socker() {
+	sockaddr_in address;
+	const char hello[] = "Hello from server";
+}
 
 void draw() {
 	glBegin(GL_TRIANGLES);
