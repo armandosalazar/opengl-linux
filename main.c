@@ -1,5 +1,6 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
+#include "keys.h"
 
 void draw() {
 	glBegin(GL_TRIANGLES);
@@ -23,11 +24,17 @@ int main(void) {
 
 	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
 
+	// Check if window was created
 	if (!window) {
 		printf("Error: glfwCreateWindow failed\n");
+		glfwTerminate();
 		return 1;
 	}
 
+	// Register callback key
+	glfwSetKeyCallback(window, key_callback);
+
+	// Make the window's context current
 	glfwMakeContextCurrent(window);
 
 	// Render loop
