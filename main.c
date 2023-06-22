@@ -1,19 +1,21 @@
 #include <GLFW/glfw3.h>
 #include <stdio.h>
 #include "keys.h"
-#include <arpa/inet.h>
 
-#define PORT 8080
-#define BUFFER_SIZE 1024
+// #include <arpa/inet.h>
 
-typedef struct sockaddr_in sockaddr_in;
+// #define PORT 8080
+// #define BUFFER_SIZE 1024
 
-void run_socker() {
-	sockaddr_in address;
-	const char hello[] = "Hello from server";
-}
+// typedef struct sockaddr_in sockaddr_in;
 
-void draw() {
+// void run_socker() {
+// 	sockaddr_in address;
+// 	const char hello[] = "Hello from server";
+// }
+
+void draw()
+{
 	glBegin(GL_TRIANGLES);
 	glVertex2f(-0.5f, -0.5f);
 	glVertex2f(0.0f, 0.5f);
@@ -21,22 +23,26 @@ void draw() {
 	glEnd();
 }
 
-void display() {
+void display()
+{
 	glClear(GL_COLOR_BUFFER_BIT);
 	draw();
 	glFlush();
 }
 
-int main(void) {
-	if (!glfwInit()) {
+int main(void)
+{
+	if (!glfwInit())
+	{
 		printf("Error: glfwInit failed\n");
 		return 1;
 	}
 
-	GLFWwindow* window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+	GLFWwindow *window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
 
 	// Check if window was created
-	if (!window) {
+	if (!window)
+	{
 		printf("Error: glfwCreateWindow failed\n");
 		glfwTerminate();
 		return 1;
@@ -49,7 +55,8 @@ int main(void) {
 	glfwMakeContextCurrent(window);
 
 	// Render loop
-	while (!glfwWindowShouldClose(window)) {
+	while (!glfwWindowShouldClose(window))
+	{
 		// Draw
 		display();
 

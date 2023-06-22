@@ -10,3 +10,6 @@
 
 `gcc main.c -o main -lgldw -lGL`
 
+*run mac*
+`gcc main.c -o main -lglfw -framework OpenGL -Wno-deprecated-declarations; ./main`
+
